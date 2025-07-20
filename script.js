@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. Typewriter Effect for Tagline (on index.html only) ---
     const taglineElement = document.getElementById('tagline');
-    const taglineText = "Gerbang Informasi Intergalaksi Hubungan Hewan Peliharaan Anda.";
+    const taglineText = "Gerbang Informasi UTUNG EMPIRE since 2021.";
     let charIndex = 0;
     let typingSpeed = 70; // milliseconds per character
 
