@@ -1,0 +1,185 @@
+@import url('../style.css'); /* WAJIB: Impor style.css utama dari root */
+
+/* --- Gaya Khusus untuk Halaman Kontributor --- */
+
+/* Hero Section (Opsional, jika ingin header berbeda dari default hero di main) */
+/* .hero-section.contributor-hero { */
+/* background-image: url('../images/hero-contributor.jpg'); */
+/* height: 40vh; */
+/* } */
+
+/* Grid Kontributor (Disesuaikan dari style.css utama) */
+.contributor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.contributor-card {
+    background-color: var(--glass-effect);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contributor-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.contributor-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), var(--glow-filter);
+}
+
+.contributor-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Membuat gambar bulat */
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+.contributor-card:hover img {
+    transform: scale(1.05);
+}
+
+.contributor-card h3 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px var(--primary-color);
+}
+.contributor-card .role {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+.contributor-card .description {
+    font-size: 0.95em;
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tombol Lihat Profil di Dashboard Kontributor */
+.profile-toggle-button {
+    background: linear-gradient(45deg, var(--accent-color), #00ffaa); /* Hijau */
+    color: var(--background-dark); /* Teks gelap di tombol hijau */
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 15px; /* Jarak dari deskripsi */
+    margin-bottom: 20px; /* Jarak ke details */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 255, 102, 0.4);
+}
+.profile-toggle-button:hover {
+    background: linear-gradient(45deg, #00ffaa, var(--accent-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 255, 102, 0.6);
+}
+
+
+/* Detail Profil yang Tersembunyi/Muncul */
+.profile-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out, padding-top 0.7s ease-in-out; /* Transisi lebih halus */
+    opacity: 0;
+    width: 100%; /* Memastikan lebar penuh di dalam card */
+    padding-top: 0; /* Padding default */
+}
+
+.profile-details.expanded {
+    max-height: 500px; /* Cukup besar untuk menampung konten */
+    opacity: 1;
+    padding-top: 15px; /* Padding saat dibuka */
+}
+
+.contributor-card .contact-info p,
+.contributor-card .social-links p {
+    font-size: 0.95em;
+    margin: 5px 0;
+    color: #b0b0b0;
+    text-align: left; /* Teks rata kiri dalam detail */
+    word-wrap: break-word; /* Memastikan teks panjang tidak keluar dari batas */
+}
+.contributor-card .contact-info a { /* Untuk link di WA/Email */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contributor-card .contact-info a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+/* Untuk teks biasa username social media (jika tidak ada link) */
+.contributor-card .social-links p {
+    color: #b0b0b0;
+}
+.contributor-card .social-links p strong { /* Username atau "Not Found" */
+    color: var(--primary-color);
+    font-weight: normal;
+    font-family: 'Share Tech Mono', monospace; /* Font khusus untuk username */
+}
+.contributor-card .social-links p .not-found-text {
+    color: var(--error-color); /* Warna merah untuk "Not Found" */
+    font-style: italic;
+    font-family: 'Rajdhani', sans-serif; /* Kembalikan font agar konsisten dengan p */
+    font-weight: 400;
+}
+
+
+/* --- Responsive adjustments untuk Kontributor --- */
+/* (Ini akan menimpa gaya responsive default jika diperlukan) */
+
+@media (max-width: 992px) { /* Untuk tablet dan mobile, seleksi ini lebih umum */
+    .contributor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kolom lebih kecil untuk tablet */
+        gap: 20px;
+    }
+    .contributor-card { padding: 25px; }
+    .contributor-card img { width: 140px; height: 140px; }
+    .contributor-card h3 { font-size: 1.8em; }
+    .contributor-card .role { font-size: 1.05em; }
+    .contributor-card .description { font-size: 0.9em; }
+
+    .profile-toggle-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        max-width: 160px; /* Lebih kecil lagi */
+    }
+}
+
+@media (max-width: 768px) { /* Untuk ponsel kecil */
+    .contributor-grid {
+        grid-template-columns: 1fr; /* Satu kolom di ponsel sangat kecil */
+        gap: 15px;
+    }
+    .contributor-card { padding: 20px; }
+    .contributor-card img { width: 120px; height: 120px; }
+    .contributor-card h3 { font-size: 1.6em; }
+    .contributor-card .role { font-size: 0.95em; }
+    .contributor-card .description { font-size: 0.85em; }
+
+    .profile-toggle-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        max-width: 140px;
+    }
+}
