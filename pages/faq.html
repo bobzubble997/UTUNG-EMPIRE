@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - UTUNG EMPIRE</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .faq-section {
+      margin-top: 40px;
+    }
+    .faq-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      box-shadow: 0 0 10px var(--primary-color);
+    }
+    .faq-question {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: var(--primary-color);
+    }
+    .faq-answer {
+      margin-top: 10px;
+      display: none;
+      color: #ccc;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">UTUNG EMPIRE</a>
+    <nav>
+      <div class="hamburger" id="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+      </ul>
+    </nav>
+  </header>  <main class="main-content">
+    <h1>FAQ - Pertanyaan yang Sering Ditanyakan</h1>
+    <div class="faq-section"><div class="faq-item">
+    <div class="faq-question">Apa itu UTUNG EMPIRE?</div>
+    <div class="faq-answer">UTUNG EMPIRE adalah dunia fiksi digital yang dibangun dengan semangat kekaisaran, komunitas, dan kreativitas.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Bagaimana cara mendaftarkan karakter baru?</div>
+    <div class="faq-answer">Silakan ajukan melalui form kontak, atau hubungi admin untuk proses validasi karakter.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Apakah semua orang bisa bergabung?</div>
+    <div class="faq-answer">Ya, UTUNG EMPIRE terbuka untuk siapa saja yang ingin ikut berkontribusi secara positif.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Apakah saya bisa keluar dari Empire?</div>
+    <div class="faq-answer">Bisa, cukup hubungi admin dan karaktermu akan diarsipkan sebagai sejarah Empire.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Apakah UTUNG EMPIRE berhubungan dengan proyek kripto?</div>
+    <div class="faq-answer">Untuk saat ini tidak. Namun kemungkinan kolaborasi ke arah Web3 bisa saja dilakukan di masa depan.</div>
+  </div>
+
+</div>
+
+  </main>  <footer>
+    &copy; 2025 UTUNG EMPIRE. All rights reserved.
+  </footer>  <script src="../script.js"></script>  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script></body>
+</html>
