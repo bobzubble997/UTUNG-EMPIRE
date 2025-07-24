@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - UTUNG EMPIRE</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .contact-section {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+    }
+    .contact-section input:focus,
+    .contact-section textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px var(--primary-color);
+    }
+    .contact-section .button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">UTUNG EMPIRE</a>
+    <nav>
+      <div class="hamburger" id="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+      </ul>
+    </nav>
+  </header>  <main class="main-content">
+    <h1>Hubungi Kami</h1>
+    <p class="tagline">Kami siap menerima pesan, kritik, atau kerjasama.</p><div class="contact-section">
+  <form action="#" method="post">
+    <input type="text" name="name" placeholder="Nama Anda" required>
+    <input type="email" name="email" placeholder="Email Anda" required>
+    <textarea name="message" rows="5" placeholder="Pesan Anda..." required></textarea>
+    <button type="submit" class="button">Kirim Pesan</button>
+  </form>
+  <div style="margin-top: 20px; text-align: center;">
+    <a href="https://wa.me/6281234567890" class="button secondary" target="_blank">Hubungi via WhatsApp</a>
+  </div>
+</div>
+
+  </main>  <footer>
+    &copy; 2025 UTUNG EMPIRE. All rights reserved.
+  </footer>  <script src="../script.js"></script></body>
+</html>
